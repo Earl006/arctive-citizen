@@ -1,0 +1,332 @@
+<section class="hero bg-gray-100 backdrop-blur-[1px] bg-opacity-90 p-4 py-6 md:py-10 text-gray-800 flex flex-col gap-4 md:flex-row">
+    <div class="container mx-auto px-4 py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <!-- Left Content -->
+        <div [@fadeInOut]>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Empowering<br />
+              <span class="bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent">
+                Kenyan Voices
+              </span><br />
+              for a Transparent Future
+            </h1>
+            <p class="text-lg md:text-xl text-gray-700 mb-8">
+              Arctive Citizen bridges technology and civic engagement, creating digital tools that foster accountability and inclusivity across Kenya. Join our movement to break down barriers and build a stronger community.
+            </p>
+            <a 
+             class="bg-black center gap-1 w-fit hover:bg-gray-900 hover:cursor-pointer 
+                    ring-1 ring-blue-400 hover:ring-teal-500 transition-all 
+                    ring-offset-2 text-white px-8 py-3 rounded-full flex items-center">
+                <span class="mx-2">Get Involved</span>
+                <svg class="w-4 h-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
+          </a>
+          </div>
+  
+        <!-- Right Content -->
+        <div [@fadeInRight] class="flex justify-center items-center fade-hidden fade-right">
+          <div class="relative">
+            <!-- Stats Overlays -->
+            <div class="absolute -top-0 right-10 h-24 w-24 bg-white shadow-lg text-teal-600
+                rounded-full flex flex-col items-center justify-center z-10">
+              <span class="text-xl font-bold">250</span>
+              <span class="text-xs text-center px-2">Communities</span>
+            </div>
+            
+            <div class="absolute -bottom-0 left-10 h-24 w-24 bg-white shadow-lg text-teal-600
+                rounded-full flex flex-col items-center justify-center z-10">
+              <span class="text-xl font-bold">1K+</span>
+              <span class="text-xs text-center px-2">Engaged Citizens</span>
+            </div>
+  
+            <!-- Ring with Image -->
+            <div class="p-4 bg-gradient-to-br from-teal-500 to-blue-500 rounded-full">
+                <div class="rounded-full bg-white border-4 border-gray-200 h-[300px] w-[300px] md:h-[400px] md:w-[400px] overflow-hidden flex items-center justify-center shadow-md">
+                  <img src="assets/arctivecitizen.webp" 
+                       alt="Kenyan Citizens" 
+                       class="w-full h-full object-cover transform transition-transform duration-300 hover:scale-105">
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission py-16 bg-gradient-to-b from-gray-100 to-white">
+    <div class="container mx-auto px-4">
+      <!-- Section Header with Animation -->
+      <div class="text-center mb-16" [@fadeInUp]>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 inline-block">
+          <span class="relative">
+            Our Mission
+            <span class="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-teal-500 to-blue-500 rounded-full"></span>
+          </span>
+        </h2>
+        <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+            Transforming civic engagement in Kenya through digital innovation.
+          </p>
+          <!-- Updated Our Vision Card as a Quote -->
+          <div class="relative max-w-6xl mx-auto p-8 bg-white rounded-xl shadow-md border-l-4 border-teal-500">
+            <span class="absolute -top-3 left-4 bg-white px-2 text-teal-600 font-medium">Our Vision</span>
+            <p class="text-md md:text-lg text-gray-600 italic">
+              Arctive Citizens is dedicated to empowering Kenyans by creating accessible digital tools that enable meaningful participation in governance, advocacy, and community-building. We believe that technology can break down barriers to civic engagement and create more transparent, responsive, and inclusive systems.
+            </p>
+          </div>
+        </div>
+      
+      <!-- Impact Numbers with Icons -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="stat-card bg-white rounded-xl p-8 shadow-md border-t-4 border-teal-500 transform hover:scale-105 transition-transform" [@fadeInLeft]>
+          <div class="flex items-center justify-center mb-4">
+            <div class="h-16 w-16 bg-teal-100 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+          </div>
+          <div class="text-3xl md:text-4xl font-bold mb-2 text-center text-gray-900">{{ activeMembers }}</div>
+          <div class="text-md text-gray-700 text-center">Active Community Members</div>
+          <div class="mt-4 h-1 w-full bg-gray-200 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-teal-400 to-teal-600 w-3/4 rounded-full"></div>
+          </div>
+        </div>
+        
+        <div class="stat-card bg-white rounded-xl p-8 shadow-md border-t-4 border-blue-500 transform hover:scale-105 transition-transform" [@fadeInUp]>
+          <div class="flex items-center justify-center mb-4">
+            <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+            </div>
+          </div>
+          <div class="text-3xl md:text-4xl font-bold mb-2 text-center text-gray-900">{{ digitalTools }}</div>
+          <div class="text-md text-gray-700 text-center">Digital Tools Developed</div>
+          <div class="mt-4 h-1 w-full bg-gray-200 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-blue-400 to-blue-600 w-1/2 rounded-full"></div>
+          </div>
+        </div>
+        
+        <div class="stat-card bg-white rounded-xl p-8 shadow-md border-t-4 border-purple-500 transform hover:scale-105 transition-transform" [@fadeInRight]>
+          <div class="flex items-center justify-center mb-4">
+            <div class="h-16 w-16 bg-purple-100 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+          </div>
+          <div class="text-3xl md:text-4xl font-bold mb-2 text-center text-gray-900">{{ communityInitiatives }}</div>
+          <div class="text-md text-gray-700 text-center">Community Initiatives</div>
+          <div class="mt-4 h-1 w-full bg-gray-200 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-purple-400 to-purple-600 w-2/3 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Call to Action -->
+      <div class="mt-16 text-center" [@fadeInUp]>
+        <div class="inline-block p-1 rounded-full bg-gradient-to-r from-teal-500 to-blue-500">
+          <a class="block cursor-pointer bg-black hover:bg-gray-800 text-white rounded-full px-8 py-3 font-medium transition-all">
+            Learn More About Our Impact
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="upcoming-events bg-gradient-to-b from-white to-gray-100 py-16">
+    <div class="container mx-auto px-4">
+      <!-- Section Header with Animation -->
+      <div class="text-center mb-16" [@fadeInUp]>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Upcoming Events
+        </h2>
+        <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
+          Join our exciting lineup of events designed to empower communities across Kenya.
+        </p>
+      </div>
+      
+      <!-- Event Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Event Card 1 -->
+        <div class="event-card bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform" [@fadeInUp]>
+          <div class="h-48 w-full bg-cover bg-center" style="background-image: url('assets/poster.webp');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Community Empowerment Summit</h3>
+            <p class="text-sm text-gray-600 mb-4">September 15, 2025</p>
+            <p class="text-md text-gray-700 mb-4">
+              Gather with like-minded individuals for a day of inspiring talks and interactive sessions focused on community empowerment.
+            </p>
+            <a href="#" class="inline-block bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-full font-medium transition-all">
+              Learn More
+            </a>
+          </div>
+        </div>
+  
+        <!-- Event Card 2 -->
+        <div class="event-card bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform" [@fadeInUp]>
+          <div class="h-48 w-full bg-cover bg-center" style="background-image: url('assets/poster.webp');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Digital Innovation Forum</h3>
+            <p class="text-sm text-gray-600 mb-4">October 05, 2025</p>
+            <p class="text-md text-gray-700 mb-4">
+              Explore the latest in digital tools and learn how innovation is transforming civic engagement in Kenya.
+            </p>
+            <a href="#" class="inline-block bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-full font-medium transition-all">
+              Learn More
+            </a>
+          </div>
+        </div>
+  
+        <!-- Event Card 3 -->
+        <div class="event-card bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform" [@fadeInUp]>
+          <div class="h-48 w-full bg-cover bg-center" style="background-image: url('assets/poster.webp');"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Civic Engagement Workshop</h3>
+            <p class="text-sm text-gray-600 mb-4">November 20, 2025</p>
+            <p class="text-md text-gray-700 mb-4">
+              Participate in hands-on sessions that provide practical strategies for enhancing civic participation across communities.
+            </p>
+            <a href="#" class="inline-block bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-full font-medium transition-all">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- View More Events Button -->
+      <div class="mt-16 text-center" [@fadeInUp]>
+        <div class="inline-block p-1 rounded-full bg-gradient-to-r from-teal-500 to-blue-500">
+
+        <a href="#" class="inline-block bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-full font-medium transition-all">
+          View More Events
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline-block ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="our-team py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <!-- Section Header with Animation -->
+      <div class="text-center mb-12" [@fadeInUp]>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Our Team
+        </h2>
+        <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">
+          Meet the dedicated leaders shaping the future of civic engagement at Arctive Citizen.
+        </p>
+      </div>
+      
+      <!-- Team Members Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Team Card 1 -->
+        <div class="team-card bg-gray-50 p-8 rounded-xl shadow-md transform hover:scale-105 transition-all" [@fadeInUp]>
+          <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
+            <img src="https://static.vecteezy.com/system/resources/previews/005/545/335/non_2x/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" alt="CEO" class="w-full h-full object-cover">
+          </div>
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-gray-900">Jane Doe</h3>
+            <p class="text-md text-gray-600">Chief Executive Officer</p>
+          </div>
+        </div>
+        
+        <!-- Team Card 2 -->
+        <div class="team-card bg-gray-50 p-8 rounded-xl shadow-md transform hover:scale-105 transition-all" [@fadeInUp]>
+          <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
+            <img src="https://static.vecteezy.com/system/resources/previews/005/545/335/non_2x/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" alt="Head of Operations" class="w-full h-full object-cover">
+          </div>
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-gray-900">John Smith</h3>
+            <p class="text-md text-gray-600">Head of Operations</p>
+          </div>
+        </div>
+        
+        <!-- Team Card 3 -->
+        <div class="team-card bg-gray-50 p-8 rounded-xl shadow-md transform hover:scale-105 transition-all" [@fadeInUp]>
+          <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
+            <img src="https://static.vecteezy.com/system/resources/previews/005/545/335/non_2x/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg" alt="CTO" class="w-full h-full object-cover">
+          </div>
+          <div class="text-center">
+            <h3 class="text-xl font-bold text-gray-900">Sharon Awuor</h3>
+            <p class="text-md text-gray-600">Chief Technology Officer</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- View Full Team Button -->
+      <div class="mt-16 text-center" [@fadeInUp]>
+        <div class="inline-block p-1 rounded-full bg-gradient-to-r from-teal-500 to-blue-500">
+
+        <a href="/our-team" class="inline-block bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-full font-medium transition-all">
+          Meet the Full Team
+        </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section class="cta bg-gradient-to-r from-teal-500 to-blue-500 py-16 text-white">
+        <div class="container mx-auto px-4">
+        <div class="text-center" [@fadeInUp]>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Join Our Movement?
+            </h2>
+            <p class="text-lg md:text-xl mb-8">
+            Become an Arctive Citizen today and help shape the future of Kenya.
+            </p>
+            <a href="#" class="inline-block bg-black text-white px-8 py-3 rounded-full font-medium transition-all hover:bg-gray-800">
+            Get Involved
+            </a>
+        </div>
+        </div>
+    </section>
+
+    <!-- <section class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-black">
+          <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/15 to-black/60"></div>
+          <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM16.686 0L10.2 6.485 11.616 7.9l7.9-7.9h-2.83zM37.656 0l8.485 8.485-1.414 1.414L36.242 1.414 37.656 0zm-15.313 0L13.858 8.485l1.414 1.414L23.757 1.414 22.343 0zM32.8 0l12.142 12.142-1.414 1.414L30 .828 31.414 0H32.8zm-5.6 0L15.058 12.142l1.414 1.414L30 .828 28.586 0H27.2zM22.343 0L0 22.343l1.414 1.414L26.172 0h-3.829zm15.314 0L60 37.657l-1.414 1.414L33.828 0h3.829zM27.2 0L0 27.2l1.414 1.414L32.8 0h-5.6zm11.2 0L60 38.4l-1.414 1.414L32.8 0h5.6zM32.8 0L0 32.8l1.414 1.414L38.4 0h-5.6zm5.6 0L60 38.4l-1.414 1.414L32.8 0h5.6zM38.4 0L0 38.4l1.414 1.414L44 0h-5.6zm5.6 0L60 44l-1.414 1.414L38.4 0h5.6z\' fill=\'%23FFFFFF\' fill-opacity=\'0.08\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative">
+          <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+              Have Questions? Get In Touch!
+            </h2>
+            <p class="text-xl text-gray-300 mb-10">
+              We’re here to help and answer any queries you may have. Reach out and let’s start a conversation.
+            </p>
+            <form class="bg-white bg-opacity-95 rounded-xl p-8 max-w-2xl mx-auto shadow-xl transform transition-all hover:scale-105">
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="name">
+                  Name
+                </label>
+                <input id="name" type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors">
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="email">
+                  Email
+                </label>
+                <input id="email" type="email" placeholder="Your Email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors">
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="message">
+                  Message
+                </label>
+                <textarea id="message" rows="4" placeholder="Your Message" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition-colors"></textarea>
+              </div>
+              <button type="submit" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold px-4 py-3 rounded-full transition-all transform hover:scale-105">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section> -->
