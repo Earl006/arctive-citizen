@@ -1,0 +1,191 @@
+<!-- Hero Section -->
+<section class="bg-gray-100 backdrop-blur-[1px] bg-opacity-90 py-20 text-gray-800">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center" @fadeIn>
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+        About 
+        <span class="bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent">
+          Arctive Citizen
+        </span>
+      </h1>
+      <p class="text-xl text-gray-700 leading-relaxed">
+        Reimagining and expanding pathways for meaningful participation in civic life, ensuring active citizenship is accessible to everyone.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-gradient-to-br from-teal-500 to-blue-500 rounded-xl p-8 shadow-lg text-white" @fadeInLeft>
+        <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+        <p class="text-lg">
+          To reimagine and expand pathways for meaningful participation in civic life, ensuring active citizenship is accessible to everyone, regardless of background or resources.
+        </p>
+      </div>
+      
+      <div class="bg-white rounded-xl p-8 shadow-lg border-t-4 border-teal-500" @fadeInRight>
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Vision</h2>
+        <p class="text-lg text-gray-700">
+          A world where every individual has the power, resources, and support to shape just and equitable societies through active and meaningful civic engagement.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center text-gray-900" @fadeIn>Our Story</h2>
+      
+      <div class="relative pl-8 pb-6 border-l-2 border-teal-500" @fadeIn>
+        <div class="absolute w-4 h-4 bg-teal-500 rounded-full -left-[9px] top-0"></div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">The Beginning</h3>
+        <p class="text-gray-700 mb-4">
+          Founded by Wevyn Muganda, Arctive Citizens originated from a project funded by UNOPS. What began as an initiative focused on climate awareness evolved into a broader platform addressing governance and civic issues in response to political unrest in Kenya.
+        </p>
+      </div>
+      
+      <div class="relative pl-8 pb-6 border-l-2 border-blue-500" @fadeIn>
+        <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[9px] top-0"></div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Our Approach</h3>
+        <p class="text-gray-700 mb-4">
+          Arctive Citizens integrates online and offline strategies through its Tech-Enabled Grassroots (TEG) model. We leverage technology while ensuring inclusivity and accessibility in civic participation, reaching citizens regardless of their digital access.
+        </p>
+      </div>
+      
+      <div class="relative pl-8 pb-6" @fadeIn>
+        <div class="absolute w-4 h-4 bg-teal-500 rounded-full -left-[9px] top-0"></div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Where We Are Today</h3>
+        <p class="text-gray-700">
+          Today, Arctive Citizens stands as a platform dedicated to empowering Kenyans to actively participate in shaping their communities and societies through technology and grassroots activism.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Impact Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900" @fadeIn>Our Impact</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div *ngFor="let metric of impactMetrics" class="text-center" @fadeIn>
+        <div class="text-4xl font-bold text-teal-600 mb-2">{{metric.number}}</div>
+        <div class="text-gray-700">{{metric.label}}</div>
+      </div>
+    </div>
+    
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-gray-50 rounded-xl p-8" @fadeInLeft>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Digital Engagement</h3>
+        <div class="flex items-center mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2z"/>
+          </svg>
+          <span class="text-gray-700">570 TikTok followers</span>
+        </div>
+        <div class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2z"/>
+          </svg>
+          <span class="text-gray-700">205 Instagram followers</span>
+        </div>
+      </div>
+      
+      <div class="bg-gray-50 rounded-xl p-8" @fadeInRight>
+        <h3 class="text-xl font-bold text-gray-900 mb-4">Key Initiatives</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Mashujaa People's Park: Transforming dumpsites into green spaces</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Youth Engagement: Partnering with schools and universities for civic education</span>
+          </li>
+          <li class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-500 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Climate Action: Engaging youth in climate resilience and advocacy</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="py-16 bg-gradient-to-b from-gray-100 to-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-12 text-center text-gray-900" @fadeIn>Our Values</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div *ngFor="let value of values" class="bg-white rounded-xl p-8 shadow-md hover:shadow-lg transition-shadow" @fadeIn>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">{{value.title}}</h3>
+        <p class="text-gray-700">{{value.description}}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Partners Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center text-gray-900" @fadeIn>Our Partners</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div *ngFor="let partner of partners" class="bg-gray-50 rounded-xl p-6 flex flex-col items-center justify-center transition-all hover:shadow-md" @fadeIn>
+          <div class="h-24 flex items-center justify-center mb-4">
+            <img [src]="partner.logo" [alt]="partner.name + ' logo'" class="max-h-20 max-w-full object-contain" >
+          </div>
+          <span class="text-gray-800 font-medium text-center">{{partner.name}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Contact Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center text-gray-900" @fadeIn>Get In Touch</h2>
+    
+    <div class="max-w-lg mx-auto bg-white rounded-xl shadow-md p-8" @fadeIn>
+      <div class="flex items-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        <div>
+          <p class="text-sm text-gray-600">Email</p>
+          <a href="mailto:info@arctivecitizens.org" class="text-teal-600 hover:text-teal-700">info&#64;arctivecitizens.org</a>
+        </div>
+      </div>
+      
+      <div class="flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+        <div>
+          <p class="text-sm text-gray-600">Phone</p>
+          <a href="tel:+254702868986" class="text-teal-600 hover:text-teal-700">+254 702 868 986</a>
+        </div>
+      </div>
+      
+      <div class="mt-6 flex justify-center">
+        <!-- <a href="https://www.arctivecitizens.org" target="_blank" class="inline-block bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-full font-medium transition-all">
+          Visit Our Website
+        </a> -->
+      </div>
+    </div>
+  </div>
+</section>
