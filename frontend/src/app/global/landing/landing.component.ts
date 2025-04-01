@@ -1,10 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { CommonModule } from '@angular/common';
+
+interface Event {
+  id: number;
+  title: string;
+  date: Date;
+  location: string;
+  description: string;
+  price: string;
+  isPast: boolean;
+  image: string;
+  tags: string[];
+}
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css'],
+  imports: [CommonModule],
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [
@@ -33,10 +47,13 @@ import { animate, style, transition, trigger } from '@angular/animations';
         animate('0.5s ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
       ])
     ]),
-    trigger('fadeInRight', [
+    trigger('fadeInModal', [
       transition(':enter', [
-        style({ transform: 'translateX(20px)', opacity: 0 }),
-        animate('0.5s ease-out', style({ transform: 'translateX(0)', opacity: 1 }))
+        style({ opacity: 0, transform: 'scale(0.95)' }),
+        animate('300ms ease-out', style({ opacity: 1, transform: 'scale(1)' }))
+      ]),
+      transition(':leave', [
+        animate('200ms ease-in', style({ opacity: 0, transform: 'scale(0.95)' }))
       ])
     ])
   ]
@@ -49,6 +66,23 @@ export class LandingComponent implements OnInit {
   targetActiveMembers = 100;
   targetDigitalTools = 5;
   targetCommunityInitiatives = 10;
+  
+  selectedEvent: Event | null = null;
+
+  // Featured events for the landing page
+  featuredEvents: Event[] = [
+    {
+      id: 1,
+      title: "Women's Day Gathering",
+      date: new Date('2024-03-08T10:30:00'),
+      location: "The Creative Nest Studio, Nandi Road 85, Karen",
+      description: "We're so excited to see you tomorrow for our Women's Day gathering! 💛\n\n📍 Location: The Creative Nest Studio, Nandi Road 85, Karen\n⏰ Arrival: 10:30 AM (We start right on time—please be punctual!)\n\nLook forward to a relaxing yoga session (mats provided), creative art activities, meaningful conversations, and light snacks. 🧘🏾‍♀️🎨💬🍉 Feel free to bring your own color pencils, crayons, or art supplies if you'd like!\n\nCome as you are, and let's share this beautiful moment together. See you tomorrow!\n\n#IWD",
+      price: "Ksh. 1,000",
+      isPast: true,
+      image: "assets/womens-day-event.jpeg",
+      tags: ["Women's Day", "Workshop", "Wellness"]
+    }
+  ];
 
   ngOnInit(): void {
     this.animateCount('activeMembers', this.targetActiveMembers, 2000);
@@ -69,5 +103,31 @@ export class LandingComponent implements OnInit {
         clearInterval(timer);
       }
     }, interval);
+  }
+
+  // Event handling methods
+  openEventDetails(event: Event): void {
+    this.selectedEvent = event;
+  }
+
+  closeEventDetails(): void {
+    this.selectedEvent = null;
+  }
+
+  formatDate(date: Date): string {
+    return date.toLocaleDateString('en-US', { 
+      weekday: 'long',
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  }
+  
+  formatTime(date: Date): string {
+    return date.toLocaleTimeString('en-US', { 
+      hour: 'numeric', 
+      minute: '2-digit',
+      hour12: true 
+    });
   }
 }

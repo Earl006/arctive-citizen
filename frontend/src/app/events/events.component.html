@@ -1,0 +1,225 @@
+<!-- Hero Section -->
+<section class="bg-gray-100 backdrop-blur-[1px] bg-opacity-90 py-20 text-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center" @fadeIn>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+          Our 
+          <span class="bg-gradient-to-r from-teal-500 to-blue-500 bg-clip-text text-transparent">
+            Events
+          </span>
+        </h1>
+        <p class="text-xl text-gray-700 leading-relaxed">
+          Join us in creating impact through community gatherings, workshops, and celebrations. Connect, learn, and contribute to positive change.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Events Filter Section -->
+  <section class="py-8 bg-white border-b">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center space-x-4">
+        <button 
+          (click)="filterEvents('all')" 
+          class="px-6 py-2 rounded-full text-sm font-medium transition-all"
+          [ngClass]="{'bg-black text-white': activeFilter === 'all', 
+                     'bg-gray-100 text-gray-700 hover:bg-gray-200': activeFilter !== 'all'}">
+          All Events
+        </button>
+        <button 
+          (click)="filterEvents('upcoming')" 
+          class="px-6 py-2 rounded-full text-sm font-medium transition-all"
+          [ngClass]="{'bg-black text-white': activeFilter === 'upcoming', 
+                     'bg-gray-100 text-gray-700 hover:bg-gray-200': activeFilter !== 'upcoming'}">
+          Upcoming Events
+        </button>
+        <button 
+          (click)="filterEvents('past')" 
+          class="px-6 py-2 rounded-full text-sm font-medium transition-all"
+          [ngClass]="{'bg-black text-white': activeFilter === 'past', 
+                     'bg-gray-100 text-gray-700 hover:bg-gray-200': activeFilter !== 'past'}">
+          Past Events
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Events Grid -->
+  <section class="py-12 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <!-- No events message -->
+      <div *ngIf="filteredEvents.length === 0" class="text-center py-12" @fadeIn>
+        <p class="text-xl text-gray-600">No events found. Check back soon!</p>
+      </div>
+  
+      <!-- Events grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let event of filteredEvents" class="relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow" @fadeIn>
+          <!-- Past event ribbon -->
+          <div *ngIf="event.isPast" class="absolute top-0 right-0 bg-red-500 text-white py-1 px-4 transform rotate-45 translate-x-8 translate-y-3 z-10">
+            Past Event
+          </div>
+  
+          <!-- Event image -->
+          <div class="relative h-48 bg-gray-200">
+            <img [src]="event.image" [alt]="event.title" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent w-full h-24 opacity-60"></div>
+            <div class="absolute bottom-0 left-0 w-full p-4">
+              <div class="flex space-x-2">
+                <span *ngFor="let tag of event.tags" class="bg-teal-500 text-white text-xs px-2 py-1 rounded-full">
+                  {{ tag }}
+                </span>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Event details -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              {{ event.title }}
+            </h3>
+            
+            <!-- Date & time -->
+            <div class="flex items-center mb-2 text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>{{ formatDate(event.date) }} • {{ formatTime(event.date) }}</span>
+            </div>
+            
+            <!-- Location -->
+            <div class="flex items-center mb-2 text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>{{ event.location }}</span>
+            </div>
+            
+            <!-- Price -->
+            <div class="flex items-center mb-4 text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{{ event.price }}</span>
+            </div>
+            
+            <!-- Description (truncated) -->
+            <p class="text-gray-700 mb-4 line-clamp-3">
+              {{ event.description.split('\n')[0] }}
+            </p>
+            
+            <!-- View Details button -->
+            <button (click)="openEventDetails(event)" class="inline-block bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-full font-medium transition-all">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-teal-600 to-blue-600 text-white">
+    <div class="container mx-auto px-4 text-center" @fadeIn>
+      <h2 class="text-3xl font-bold mb-6">Want to Host an Event With Us?</h2>
+      <p class="text-xl text-white-200 mb-8 max-w-2xl mx-auto">
+        Partner with Arctive Citizen to create meaningful events that drive positive change in our community.
+      </p>
+      <a href="#" class="inline-block bg-white hover:bg-gray-100 text-gray-900 px-8 py-3 rounded-full font-medium transition-all">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+  <!-- Event Details Modal -->
+  <div *ngIf="selectedEvent" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 overflow-y-auto" (click)="closeEventDetails()">
+    <!-- Modal Content -->
+    <div @fadeInModal class="bg-white rounded-xl overflow-hidden shadow-xl max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row" (click)="$event.stopPropagation()">
+      <!-- Event Image (Left side on desktop, top on mobile) -->
+      <div class="md:w-2/5 h-64 md:h-auto relative">
+        <img [src]="selectedEvent.image" [alt]="selectedEvent.title" class="w-full h-full object-cover">
+        
+        <!-- Past event overlay -->
+        <div *ngIf="selectedEvent.isPast" class="absolute top-4 right-4 bg-red-500 text-white py-1 px-3 rounded-full text-sm font-medium">
+          Past Event
+        </div>
+      </div>
+      
+      <!-- Event Details (Right side on desktop, bottom on mobile) -->
+      <div class="md:w-3/5 p-6 md:p-8 overflow-y-auto">
+        <!-- Close button -->
+        <button (click)="closeEventDetails()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        
+        <!-- Event title -->
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          {{ selectedEvent.title }}
+        </h2>
+        
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span *ngFor="let tag of selectedEvent.tags" class="bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full">
+            {{ tag }}
+          </span>
+        </div>
+        
+        <!-- Event Details -->
+        <div class="space-y-4 mb-6">
+          <!-- Date & time -->
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-teal-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <div>
+              <p class="font-medium">Date & Time</p>
+              <p class="text-gray-600">{{ formatDate(selectedEvent.date) }}</p>
+              <p class="text-gray-600">{{ formatTime(selectedEvent.date) }}</p>
+            </div>
+          </div>
+          
+          <!-- Location -->
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-teal-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <div>
+              <p class="font-medium">Location</p>
+              <p class="text-gray-600">{{ selectedEvent.location }}</p>
+            </div>
+          </div>
+          
+          <!-- Price -->
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 text-teal-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+              <p class="font-medium">Price</p>
+              <p class="text-gray-600">{{ selectedEvent.price }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Event Description -->
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Description</h3>
+          <div class="text-gray-700 whitespace-pre-line">{{ selectedEvent.description }}</div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="mt-8 flex space-x-4">
+          <button *ngIf="!selectedEvent.isPast" class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 rounded-full font-medium transition-all">
+            Register Now
+          </button>
+          <button (click)="closeEventDetails()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-full font-medium transition-all">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
